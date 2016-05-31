@@ -1,0 +1,97 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 3 (0x3)
+    Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=DE, O=haw-hamburg, CN=CA
+        Validity
+            Not Before: May  9 23:19:14 2016 GMT
+            Not After : May  9 23:19:14 2018 GMT
+        Subject: C=DE, O=haw-hamburg, OU=informatik, CN=gerritundduc.informatik.haw-hamburg.de
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:a4:ff:0d:1b:58:a8:f9:1a:48:31:0a:6a:28:cc:
+                    6d:bb:99:58:23:68:bf:9a:a8:0b:27:9f:1c:65:26:
+                    85:3e:fe:66:ad:6b:82:a5:1f:4f:44:48:d1:ce:f1:
+                    60:be:e4:ac:67:b1:71:86:15:a8:5a:af:ba:bf:e0:
+                    64:e9:f7:e6:76:87:39:ce:7d:11:04:c0:0e:b3:9f:
+                    4e:52:82:ea:8a:bc:41:2e:72:2d:b9:df:bb:1b:af:
+                    dd:c7:61:f9:87:f7:cc:88:e7:d2:30:51:d0:38:26:
+                    11:97:08:92:8b:99:c8:15:35:50:32:72:95:fe:8a:
+                    dd:d9:92:cd:b0:fd:50:2c:e1:eb:0a:1c:da:a0:dd:
+                    d7:6b:19:29:92:55:f4:53:1a:c4:69:44:ea:19:c9:
+                    61:a5:81:46:a6:0f:bf:22:03:4e:e2:b1:dc:32:b0:
+                    e2:65:67:d8:13:08:7a:9b:78:cb:97:e3:7c:e9:bd:
+                    9a:a9:b7:13:63:d5:be:c0:4b:85:a1:a9:bc:c7:7c:
+                    2b:57:5c:85:50:4b:ad:14:16:cc:de:c8:c1:9a:2c:
+                    1d:96:6e:ba:d5:3c:05:6d:5e:95:e4:a4:9e:98:f8:
+                    98:3b:b4:50:eb:af:43:55:a6:07:3b:4e:51:17:7b:
+                    e4:00:1d:b7:23:ac:11:1f:f2:e1:c3:40:a6:d5:11:
+                    65:53
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication, TLS Web Client Authentication
+            X509v3 Subject Key Identifier: 
+                6C:C6:F7:39:2B:42:33:C5:FF:28:16:EC:CF:9E:DB:3E:8F:FC:7A:DA
+            X509v3 Authority Key Identifier: 
+                keyid:42:B6:80:02:96:94:AF:EF:B3:F6:E5:6F:98:73:BD:DF:B7:F6:32:72
+
+            Authority Information Access: 
+                CA Issuers - URI:http://gerrritundduc.informatik.haw-hamburg.de/ca/root-ca.cer
+
+            X509v3 CRL Distribution Points: 
+
+                Full Name:
+                  URI:http://gerrritundduc.informatik.haw-hamburg.de/ca/root-ca.crl
+
+            X509v3 Subject Alternative Name: 
+                DNS:gerritundduc.informatik.haw-hamburg.de
+    Signature Algorithm: sha1WithRSAEncryption
+         71:87:db:be:aa:14:5d:b3:7d:fc:91:1b:ec:fb:a9:b1:5e:16:
+         fe:ba:a3:74:9c:54:3e:14:7f:20:61:0f:83:27:7f:1d:9c:2d:
+         6f:81:b3:ce:14:0f:ae:d0:31:d0:c7:7b:df:4b:dd:38:c4:e9:
+         b6:62:3b:45:8c:a9:82:d6:04:5c:45:0b:90:cf:11:99:c8:49:
+         95:cb:9b:b4:a6:68:26:e6:74:d0:e6:56:72:0c:0b:98:a9:67:
+         2c:a1:92:25:14:2e:f8:e4:1c:0e:61:f0:96:fa:85:41:c4:4d:
+         c5:9d:50:d3:60:c6:5a:3a:51:5f:b5:26:c7:8d:4e:39:5c:fa:
+         f6:5b:b1:59:79:0d:57:72:3b:6c:9e:8e:23:21:86:30:7f:92:
+         04:fa:05:d6:14:ec:b8:d9:72:43:07:14:f7:9f:79:a7:76:7f:
+         5b:a4:4c:52:e3:a0:76:a7:19:cc:bf:c1:91:b8:fa:6b:57:6f:
+         2a:d9:b2:66:6a:f3:98:18:c0:c7:2b:7f:d2:ef:87:f0:55:ac:
+         01:e1:00:74:c6:ac:be:a9:ad:d7:8d:80:5c:be:4f:ba:26:6b:
+         f5:fd:8a:5b:98:71:25:03:e0:73:a3:46:b6:06:c6:cc:da:61:
+         c5:99:33:9d:c4:b4:c7:d3:c8:1e:72:72:fa:91:f2:ba:24:b7:
+         6f:d1:a1:f6
+-----BEGIN CERTIFICATE-----
+MIIEcjCCA1qgAwIBAgIBAzANBgkqhkiG9w0BAQUFADAwMQswCQYDVQQGEwJERTEU
+MBIGA1UECgwLaGF3LWhhbWJ1cmcxCzAJBgNVBAMMAkNBMB4XDTE2MDUwOTIzMTkx
+NFoXDTE4MDUwOTIzMTkxNFowaTELMAkGA1UEBhMCREUxFDASBgNVBAoMC2hhdy1o
+YW1idXJnMRMwEQYDVQQLDAppbmZvcm1hdGlrMS8wLQYDVQQDDCZnZXJyaXR1bmRk
+dWMuaW5mb3JtYXRpay5oYXctaGFtYnVyZy5kZTCCASIwDQYJKoZIhvcNAQEBBQAD
+ggEPADCCAQoCggEBAKT/DRtYqPkaSDEKaijMbbuZWCNov5qoCyefHGUmhT7+Zq1r
+gqUfT0RI0c7xYL7krGexcYYVqFqvur/gZOn35naHOc59EQTADrOfTlKC6oq8QS5y
+Lbnfuxuv3cdh+Yf3zIjn0jBR0DgmEZcIkouZyBU1UDJylf6K3dmSzbD9UCzh6woc
+2qDd12sZKZJV9FMaxGlE6hnJYaWBRqYPvyIDTuKx3DKw4mVn2BMIept4y5fjfOm9
+mqm3E2PVvsBLhaGpvMd8K1dchVBLrRQWzN7IwZosHZZuutU8BW1eleSknpj4mDu0
+UOuvQ1WmBztOURd75AAdtyOsER/y4cNAptURZVMCAwEAAaOCAVwwggFYMA4GA1Ud
+DwEB/wQEAwIFoDAJBgNVHRMEAjAAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEF
+BQcDAjAdBgNVHQ4EFgQUbMb3OStCM8X/KBbsz57bPo/8etowHwYDVR0jBBgwFoAU
+QraAApaUr++z9uVvmHO937f2MnIwWQYIKwYBBQUHAQEETTBLMEkGCCsGAQUFBzAC
+hj1odHRwOi8vZ2VycnJpdHVuZGR1Yy5pbmZvcm1hdGlrLmhhdy1oYW1idXJnLmRl
+L2NhL3Jvb3QtY2EuY2VyME4GA1UdHwRHMEUwQ6BBoD+GPWh0dHA6Ly9nZXJycml0
+dW5kZHVjLmluZm9ybWF0aWsuaGF3LWhhbWJ1cmcuZGUvY2Evcm9vdC1jYS5jcmww
+MQYDVR0RBCowKIImZ2Vycml0dW5kZHVjLmluZm9ybWF0aWsuaGF3LWhhbWJ1cmcu
+ZGUwDQYJKoZIhvcNAQEFBQADggEBAHGH276qFF2zffyRG+z7qbFeFv66o3ScVD4U
+fyBhD4Mnfx2cLW+Bs84UD67QMdDHe99L3TjE6bZiO0WMqYLWBFxFC5DPEZnISZXL
+m7SmaCbmdNDmVnIMC5ipZyyhkiUULvjkHA5h8Jb6hUHETcWdUNNgxlo6UV+1JseN
+Tjlc+vZbsVl5DVdyO2yejiMhhjB/kgT6BdYU7LjZckMHFPefead2f1ukTFLjoHan
+Gcy/wZG4+mtXbyrZsmZq85gYwMcrf9Lvh/BVrAHhAHTGrL6prdeNgFy+T7oma/X9
+iluYcSUD4HOjRrYGxszaYcWZM53EtMfTyB5ycvqR8rokt2/RofY=
+-----END CERTIFICATE-----

@@ -1,0 +1,60 @@
+<div class="panel panel-default users-panel" *ngIf="userContext().isLoggedIn() && userContext().isAdmin()" >
+
+    <div class="panel-heading" role="tab">
+        <h4>Users</h4>
+    </div>
+
+    <div class="panel-body">
+
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+            <div *ngIf="confirmMsg">
+                <div class="alert alert-danger" role="alert" *ngIf="!confirmMsg.success">{{confirmMsg.message}}</div>
+                <div class="alert alert-success" role="alert" *ngIf="confirmMsg.success">{{confirmMsg.message}}</div>
+            </div>
+            <ul>
+                <li *ngFor="let user of users">
+                    <div class="panel panel-default" style="max-width: 600px">
+
+                        <div class="panel-heading" role="tab" id="heading{{user.name}}" aria-expanded="false">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{user.name}}">
+                                {{user.name}}
+                            </a>
+                        </div>
+
+                        <div class="panel-body " id="collapse{{user.name}}" class="panel-collapse collapse user-panel"
+                             role="tabpanel"
+                             aria-expanded="false">
+                            <div class="input-group">
+                                <span class="input-group-addon form-icon" id="basic-addon{{user.name}}"><span
+                                        class="glyphicon glyphicon-user"></span></span>
+                                <input type="text" class="form-control" [(ngModel)]="user.name">
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon form-icon" id="basic-addon{{user.email}}"><span
+                                        class="glyphicon glyphicon-envelope"></span></span>
+                                <input type="text" class="form-control" [(ngModel)]="user.email">
+
+                            </div>
+                            <div class="input-group">
+                                <span class="label label-success" *ngIf="user.confirmed">Confirmed</span>
+                                <span class="label label-warning" *ngIf="!user.confirmed">Not Confirmed</span>
+                                <span class="label label-warning" *ngIf="user.PRrequested">Password Reset Requested</span>
+                            </div>
+
+                            <div class="settings-buttons">
+                                <button type="button" class="btn btn-success" (click)="updateEmail(user)">Save</button>
+                                <button type="button" class="btn btn-danger" (click)="delete(user)">Delete</button>
+                                <button type="button" class="btn btn-warning" (click)="getEmailConfirmation(user)" *ngIf="!user.confirmed" style="width: auto">Send confirm Email</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <create-user></create-user>
+</div>
+
+

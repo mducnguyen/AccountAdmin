@@ -1,0 +1,16 @@
+<!--<div *ngIf="userContext().isLoggedIn()">-->
+    <div class="sidebar-wrapper">
+        <ul>
+            <li>
+                <a [routerLink]="['/admin/home']">Home</a>
+            </li>
+            <li>
+                <a [routerLink]="['/admin/users']">Users</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="page-content-wrapper">
+        <router-outlet></router-outlet>
+    </div>
+<!--</div>-->

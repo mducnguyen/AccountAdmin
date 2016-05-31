@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AccountApp</title>
+
+    <!--1. Load librabires-->
+    <!--Polyfill for older browser-->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <!--2. Configure SystemJS-->
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('app').catch(function (err) {
+            console.log(err);
+        })
+    </script>
+
+</head>
+
+<body>
+    <app></app>
+</body>
+
+</html>

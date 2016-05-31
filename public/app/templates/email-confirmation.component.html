@@ -1,0 +1,23 @@
+<div class="email-confirm" *ngIf="getTobeConfirmUser()" style="padding-left: 10px">
+    <div class="header"> <h3>User: {{getTobeConfirmUser().name}}</h3></div>
+    <div class="confirm-body">
+        <div class="confirm-email" *ngIf="!confirmed && !confirmedSuccess">
+            <h4> Confirmation Email:</h4>
+            <div class="confirm-email-content">
+                To confirm your email address please click on the link (or click on the button):
+                <div class="confirm-email-link">
+                    <a href="{{emailText}}">Email Confirmation</a>
+                </div>
+            </div>
+            <div class="settings-buttons">
+                <button class="btn btn-success" style="width: auto" (click)="confirmEmail()">Confirm</button>
+            </div>
+        </div>
+        <div class="confirm-declaration" *ngIf="confirmed && confirmedSuccess">
+            <h4>Your Email is successfully confirmed!</h4>
+        </div>
+        <div class="confirm-declaration" *ngIf="confirmed && !confirmedSuccess">
+            <h4>Your Email cannot be is confirmed! Please request a new confirmation email!</h4>
+        </div>
+    </div>
+</div>
