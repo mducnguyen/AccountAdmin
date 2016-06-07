@@ -13,7 +13,10 @@ var https = require('https');
 
 var options = {
     key: fs.readFileSync('ssl/server.key'),
-    cert: fs.readFileSync('ssl/server.crt')
+    cert: fs.readFileSync('ssl/server.crt'),
+    ca: fs.readFileSync('ssl/root-ca.crt'),
+    requestCert: true,
+    rejectUnauthorized: true
 };
 
 var apiRoutes = require('./app/routes/apiRoutes');

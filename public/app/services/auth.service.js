@@ -26,6 +26,7 @@ var AuthService = (function () {
         this._storage = _storage;
         this._userService = _userService;
         this._authEndpoint = "/api/authenticate";
+        this._authCertEndpoint = "/api/authenticate_cert";
     }
     AuthService.prototype.login = function (name, password) {
         var _this = this;
@@ -68,6 +69,29 @@ var AuthService = (function () {
     };
     AuthService.prototype.logout = function () {
         this._storage.removeItem(exports.AUTH_TOKEN);
+    };
+    AuthService.prototype.loginWithCert = function () {
+        var _this = this;
+        return this._http.get(this._authCertEndpoint)
+            .flatMap(function (res) {
+            if (res.status == 200) {
+                var body = res.json();
+                var token = body.token;
+                var jwtContent = _this._jwtHelper.decodeToken(token);
+                _this.saveToken(token);
+                return _this._userService.getUser(jwtContent.uri).map(function (user) {
+                    return { success: true, user: user };
+                });
+            }
+            else if (res.status == 401) {
+            }
+            else if (res.status == 404) {
+            }
+        })
+            .catch(function (err) {
+            var errMsg = err.json().message || 'Unkown error';
+            return Observable_1.Observable.throw(errMsg);
+        });
     };
     AuthService = __decorate([
         core_1.Injectable(), 

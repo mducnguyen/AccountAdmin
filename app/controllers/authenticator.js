@@ -23,13 +23,16 @@ authenticator.authenticate = function (req, res, next) {
             res.status(404).json({success: false, message: 'Authentication failed! Name or Password is not correct!'});
         } else if (user) {
 
-            if (user._doc.confirmed){
+            if (user._doc.confirmed) {
                 var password = req.body.password;
                 var hash = user._doc.password;
 
                 bcrypt.compare(password, hash, function (err, result) {
                     if (!result) {
-                        res.status(401).json({success: false, message: 'Authentication failed! Name or Password is not correct!'})
+                        res.status(401).json({
+                            success: false,
+                            message: 'Authentication failed! Name or Password is not correct!'
+                        })
                     } else {
                         var userToken = {
                             name: user._doc.name,
@@ -51,10 +54,59 @@ authenticator.authenticate = function (req, res, next) {
                     }
                 });
             } else {
-                res.status(401).json({success: false, message: "Authentication failed! Your email hasn't been confirmed yet!"});
+                res.status(401).json({
+                    success: false,
+                    message: "Authentication failed! Your email hasn't been confirmed yet!"
+                });
             }
         }
     });
+};
+
+
+authenticator.authenticateWithSsl = function (req, res, next) {
+
+    if (req.client.authorized) {
+        var subject = req.connection.getPeerCertificate().subject;
+
+        User.findOne({name: subject.CN}, function (err, user) {
+            if (err) throw err;
+
+            if (!user) {
+                res.status(404).json({success: false, message: 'Authentication failed! Name or Password is not correct!'});
+            } else if (user) {
+
+                if (user._doc.confirmed) {
+                    var userToken = {
+                        name: user._doc.name,
+                        email: user._doc.email,
+                        admin: user._doc.admin,
+                        uri: '/api/users/' + user._doc.name
+                    };
+
+                    var token = jwt.sign(userToken, config.secret, {
+                        expiresIn: "1d"
+                    });
+
+                    res.status(200).json({
+                        success: true,
+                        message: 'Here is your token',
+                        token: token,
+                        url: ''
+                    });
+                } else {
+                    res.status(401).json({
+                        success: false,
+                        message: "Authentication failed! Your email hasn't been confirmed yet!"
+                    });
+                }
+            }
+        });
+    } else {
+        res.status(403).json({success: false});
+    }
+
+
 };
 
 authenticator.verifyToken = function (req, res, next) {

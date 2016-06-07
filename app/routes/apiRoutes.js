@@ -16,6 +16,8 @@ router.post('/register',adminUserController.registerUser);
 
 router.post('/authenticate', authenticator.authenticate);
 
+router.get('/authenticate_cert', authenticator.authenticateWithSsl);
+
 router.get('/users/:name/new_password_confirmation', userController.getNewPasswordConfirmation);
 
 router.use(authenticator.verifyToken);

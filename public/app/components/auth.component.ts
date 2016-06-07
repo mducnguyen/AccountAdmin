@@ -28,6 +28,7 @@ export class AuthComponent {
                 private _passwordChangeRequestContext:PasswordChangeRequestContext,
                 private _passwordConfirmation:PasswordChangeService) {
         this.checkForCurrentUser();
+        this.loginWithCert();
         // this.requestedPasswordConfirmation = true;
         // this.requestedPasswordConfirmation = false;
     }
@@ -65,6 +66,17 @@ export class AuthComponent {
            text => {
                this._passwordChangeRequestContext.setConfirmationText(text.text);
            }
+        );
+    }
+
+    loginWithCert() {
+        this._authService.loginWithCert().subscribe(
+            user => {
+                this._userContext.setUser(user.user)
+            },
+            error => {
+                this.confirmMsg = {success: false, message: error};
+            }
         );
     }
 }

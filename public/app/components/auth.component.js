@@ -27,6 +27,7 @@ var AuthComponent = (function () {
         this._passwordChangeRequestContext = _passwordChangeRequestContext;
         this._passwordConfirmation = _passwordConfirmation;
         this.checkForCurrentUser();
+        this.loginWithCert();
         // this.requestedPasswordConfirmation = true;
         // this.requestedPasswordConfirmation = false;
     }
@@ -53,6 +54,14 @@ var AuthComponent = (function () {
         this.requestedPasswordConfirmation = true;
         this._passwordConfirmation.getConfirmationEmail(username).subscribe(function (text) {
             _this._passwordChangeRequestContext.setConfirmationText(text.text);
+        });
+    };
+    AuthComponent.prototype.loginWithCert = function () {
+        var _this = this;
+        this._authService.loginWithCert().subscribe(function (user) {
+            _this._userContext.setUser(user.user);
+        }, function (error) {
+            _this.confirmMsg = { success: false, message: error };
         });
     };
     AuthComponent = __decorate([
